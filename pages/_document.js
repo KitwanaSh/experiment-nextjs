@@ -5,6 +5,13 @@ export default function Document() {
     <Html lang="en">
       <Head />
       <body>
+        <nav>
+          <h1>Logo</h1>
+          <ul>
+            <li>About</li>
+            <li>Signup</li>
+          </ul>
+        </nav>
         <Main />
         <NextScript />
       </body>

@@ -3,20 +3,14 @@ import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
-async function Home() {
-  const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)
-  const res = await data.json()
+export default async function Home() {
+  const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)
+  const data = await res.json();
+  console.log(data);
 
   return (
     <main>
       <h1 className='text-lg my-2'>Hello Next Js 13</h1>
-      {res.map((movie) => (
-        <div>
-          <h1>{movie.title}</h1>
-        </div>
-      ))}
     </main>
   )
 }
-
-export default Home
